@@ -126,7 +126,7 @@ void Title::resizeEvent(QResizeEvent *event)
 void Title::ChangeMovieNameShow()
 {
     QFontMetrics fontMetrics(ui->MovieNameLab->font());
-    int fontSize = fontMetrics.width(m_strMovieName);
+    int fontSize = fontMetrics.horizontalAdvance(m_strMovieName);
     int showwidth = ui->MovieNameLab->width();
     if (fontSize > showwidth)
     {

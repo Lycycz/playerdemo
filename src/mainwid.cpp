@@ -16,7 +16,7 @@
 #include <QMimeData>
 #include <QSizeGrip>
 #include <QWindow>
-#include <QDesktopWidget>
+// #include <QDesktopWidget>
 #include <QScreen>
 #include <QRect>
 #include <QFileDialog>
@@ -319,7 +319,8 @@ void MainWid::OnFullScreenPlay()
         //脱离父窗口后才能设置
         ui->ShowWid->setWindowFlags(Qt::Window);
         //多屏情况下，在当前屏幕全屏
-        QScreen *pStCurScreen = qApp->screens().at(qApp->desktop()->screenNumber(this));
+        // QScreen *pStCurScreen = qApp->screens().at(qApp->desktop()->screenNumber(this));
+        QScreen *pStCurScreen = qApp->primaryScreen();
         ui->ShowWid->windowHandle()->setScreen(pStCurScreen);
         
         ui->ShowWid->showFullScreen();
